@@ -168,3 +168,19 @@ METHOD - DELETE
 ```bash
 http://localhost:3001/api/chat/conversations/YOUR_CONVERSATION_ID
 ```
+
+
+## How to run the tests
+
+From the root navigate to `apps/api`
+
+Run the following command
+
+```bash
+npm test
+```
+
+
+Below are the test cases screenshot
+
+<img src='./assets/test-cases.png' height="600"  width="500"/>

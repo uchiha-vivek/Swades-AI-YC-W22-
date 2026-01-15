@@ -183,4 +183,4 @@ npm test
 
 Below are the test cases screenshot
 
-<img src='./assets/test-cases.png' height="600"  width="500"/>
+<img src='./assets/test-cases.png' height="800"  width="750"/>

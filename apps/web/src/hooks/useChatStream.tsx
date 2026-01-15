@@ -10,7 +10,7 @@ export function useChatStream() {
     text: string,
     conversationId?: string
   ) {
-    // 1️⃣ use demo user id
+ 
     const userId = DEMO_USER_ID
 
     setMessages((m) => [...m, { role: 'user', content: text }])
@@ -34,7 +34,7 @@ export function useChatStream() {
     const decoder = new TextDecoder()
     let agentText = ''
 
-    // 2️⃣ placeholder agent message
+    
     setMessages((m) => [...m, { role: 'agent', content: '' }])
 
     while (true) {

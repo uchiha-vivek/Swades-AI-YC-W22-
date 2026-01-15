@@ -1,13 +1,12 @@
 import { prisma } from '@agent/db'
 import { RouterAgent } from '../agents/router.agent'
 import { streamText } from 'ai'
-import { ollama } from '../ai/ollama'
+import { azure} from '../ai/ollama'
 import { getCompactedContext } from '../utils/contextManger'
+import { openai } from '@ai-sdk/openai'
 
 export class ChatService {
-  // -----------------------------
-  // Non-streaming (simple reply)
-  // -----------------------------
+   
   static async handleMessage({
     userId,
     conversationId,
@@ -25,7 +24,7 @@ export class ChatService {
         })
       ).id
 
-    // save user message
+    // save the user message 
     await prisma.message.create({
       data: {
         conversationId: convoId,
@@ -34,7 +33,7 @@ export class ChatService {
       },
     })
 
-    // 🔑 route via agents (Prisma-backed if needed)
+    // Here we are routing via agent
     const result = await RouterAgent.handle({
       userId,
       conversationId: convoId,
@@ -93,9 +92,7 @@ export class ChatService {
       message,
     })
 
-    // ---------------------------------
-    // CASE 1: TOOL-BACKED (Prisma hit)
-    // ---------------------------------
+    
     if (result.type === 'tool') {
       const encoder = new TextEncoder()
       const fullText = result.content
@@ -122,22 +119,18 @@ export class ChatService {
       return { convoId, stream }
     }
 
-    // ---------------------------------
-    // CASE 2: SUPPORT / GENERAL → LLM
-    // ---------------------------------
+    
     const context = await getCompactedContext(convoId)
 
     const llmStream = await streamText({
-      model: ollama('gemma3:latest'),
+      model: azure('gpt-4o-mini'),
       messages: context,
     })
 
     return { convoId, stream: llmStream }
   }
 
-  // -----------------------------
-  // Conversation utilities
-  // -----------------------------
+   
   static async listConversations(userId: string) {
     return prisma.conversation.findMany({
       where: { userId },

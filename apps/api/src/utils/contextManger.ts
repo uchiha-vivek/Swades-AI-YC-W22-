@@ -1,6 +1,7 @@
 import { prisma } from '@agent/db'
 import { generateText } from 'ai'
-import { ollama } from '../ai/ollama'
+import { azure } from '../ai/ollama'
+import { openai } from '@ai-sdk/openai'
 
 const MAX_MESSAGES = 10
 
@@ -36,7 +37,7 @@ export async function getCompactedContext(conversationId: string) {
     .join('\n')
 
   const { text } = await generateText({
-    model: ollama('gemma3:latest'),
+    model: azure('gpt-4o-mini'),
     prompt: `Summarize the following conversation briefly so it can be used as context later:\n\n${oldText}`,
   })
 

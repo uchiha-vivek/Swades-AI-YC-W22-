@@ -1,6 +1,6 @@
 import type { Context } from 'hono'
 import { stream } from 'hono/streaming'
-import { ChatService } from '../services/chat.service'
+import { ChatService } from '../services/chat.service.js'
 import { prisma } from '@agent/db'
 
 /**

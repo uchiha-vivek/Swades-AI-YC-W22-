@@ -1,8 +1,8 @@
 import { prisma } from '@agent/db'
-import { RouterAgent } from '../agents/router.agent'
+import { RouterAgent } from '../agents/router.agent.js'
 import { streamText } from 'ai'
 import { azure} from '../ai/ollama'
-import { getCompactedContext } from '../utils/contextManger'
+import { getCompactedContext } from '../utils/contextManger.js'
 import { openai } from '@ai-sdk/openai'
 
 export class ChatService {

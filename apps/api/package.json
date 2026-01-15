@@ -21,6 +21,7 @@
   "dependencies": {
     "@agent/db": "*",
     "@hono/node-server": "^1.19.9",
+    "cors": "^2.8.5",
     "hono": "^4.11.4",
     "hono-rate-limiter": "^0.5.3",
     "pino": "^10.2.0",

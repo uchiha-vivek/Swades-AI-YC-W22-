@@ -1,9 +1,33 @@
+// import { getOrdersByUser } from '../tools/order.tools'
+// import type { Order } from '../types/order'
+
+// export class OrderAgent {
+//   static async handle({ userId }: { userId: string }) {
+//     const orders: Order[] = await getOrdersByUser(userId)
+
+//     if (orders.length === 0) {
+//       return 'You do not have any orders yet.'
+//     }
+
+//     return orders
+//       .map(
+//         (order: Order) =>
+//           `Order ${order.id} is currently "${order.status}"${
+//             order.trackingId ? ` (Tracking ID: ${order.trackingId})` : ''
+//           }`
+//       )
+//       .join('\n')
+//   }
+// }
 import { getOrdersByUser } from '../tools/order.tools'
-import type { Order } from '../types/order'
+
+type Input = {
+  userId: string
+}
 
 export class OrderAgent {
-  static async handle({ userId }: { userId: string }) {
-    const orders: Order[] = await getOrdersByUser(userId)
+  static async handle({ userId }: Input) {
+    const orders = await getOrdersByUser(userId)
 
     if (orders.length === 0) {
       return 'You do not have any orders yet.'
@@ -11,9 +35,9 @@ export class OrderAgent {
 
     return orders
       .map(
-        (order: Order) =>
-          `Order ${order.id} is currently "${order.status}"${
-            order.trackingId ? ` (Tracking ID: ${order.trackingId})` : ''
+        (o:any) =>
+          `Order ${o.id} is ${o.status}${
+            o.trackingId ? ` (Tracking ID: ${o.trackingId})` : ''
           }`
       )
       .join('\n')

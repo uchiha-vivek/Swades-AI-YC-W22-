@@ -4,8 +4,13 @@ import { agentRoutes } from './routes/agent.routes.js'
 import { errorMiddleware } from './middlewares/error.middleware.js'
 import { requestLogger } from './middlewares/logger.js'
 import { errorHandler } from './middlewares/errorHandler.js'
+import {cors} from 'hono/cors'
 export const app = new Hono()
-
+app.use('*', cors({
+  origin: 'http://localhost:5173',  
+  allowMethods: ['GET', 'POST', 'OPTIONS'],
+  allowHeaders: ['Content-Type', 'Authorization'],
+}))
 app.use("*",requestLogger)
 app.use("*",errorHandler)
 app.use('*', errorMiddleware)

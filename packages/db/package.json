@@ -1,0 +1,19 @@
+{
+  "name": "@agent/db",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "types": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "5.22.0"
+  },
+  "prisma": {
+    "seed": "node --loader ts-node/esm prisma/seed.ts"
+  },
+  "devDependencies": {
+    "prisma": "5.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -20,5 +20,14 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@ai-sdk/google": "^3.0.8",
+    "@ai-sdk/openai": "^3.0.10",
+    "@ai-sdk/xai": "^3.0.23",
+    "@prisma/client": "^5.22.0",
+    "ai": "^6.0.35",
+    "prisma": "^5.22.0",
+    "zod": "^4.3.5"
+  }
 }

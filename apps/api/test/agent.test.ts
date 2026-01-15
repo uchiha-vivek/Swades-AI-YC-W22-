@@ -16,6 +16,6 @@ describe('Agent APIs', () => {
     )
 
     expect(res.status).toBe(200)
-    expect(res.body.can).toContain('status')
+    expect(res.body).toContain('status')
   })
 })

@@ -1,22 +1,33 @@
 import request from 'supertest'
 import { createServer } from 'node:http'
-import { Readable } from 'node:stream'
 import { app } from '../src/app'
 
-function nodeRequestToWebRequest(req: any) {
+function readBody(req: any): Promise<string | undefined> {
+  return new Promise((resolve) => {
+    if (req.method === 'GET' || req.method === 'HEAD') {
+      resolve(undefined)
+      return
+    }
+
+    let data = ''
+    req.on('data', (chunk: Buffer) => {
+      data += chunk.toString()
+    })
+    req.on('end', () => {
+      resolve(data || undefined)
+    })
+  })
+}
+
+function nodeToWebRequest(req: any, body?: string) {
   const url = `http://localhost${req.url}`
 
   const headers = new Headers()
   for (const [key, value] of Object.entries(req.headers)) {
     if (typeof value === 'string') {
-      headers.append(key, value)
+      headers.set(key, value)
     }
   }
-
-  const body =
-    req.method === 'GET' || req.method === 'HEAD'
-      ? undefined
-      : Readable.toWeb(req)
 
   return new Request(url, {
     method: req.method,
@@ -26,7 +37,9 @@ function nodeRequestToWebRequest(req: any) {
 }
 
 const server = createServer(async (req, res) => {
-  const webReq = nodeRequestToWebRequest(req)
+  const body = await readBody(req)
+  const webReq = nodeToWebRequest(req, body)
+
   const response = await app.fetch(webReq)
 
   res.statusCode = response.status

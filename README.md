@@ -38,6 +38,7 @@ How to setup prisma stuff
 
 ```bash
 cd packages
+npx prisma studio
 ```
 
 

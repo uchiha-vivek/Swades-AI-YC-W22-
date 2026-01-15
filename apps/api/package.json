@@ -20,7 +20,10 @@
   },
   "dependencies": {
     "@agent/db": "*",
+    "@ai-sdk/azure": "^3.0.11",
+    "@ai-sdk/openai": "^3.0.11",
     "@hono/node-server": "^1.19.9",
+    "ai": "^6.0.37",
     "cors": "^2.8.5",
     "hono": "^4.11.4",
     "hono-rate-limiter": "^0.5.3",

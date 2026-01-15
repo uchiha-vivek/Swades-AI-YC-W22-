@@ -11,9 +11,18 @@ app.use('*', cors({
   allowMethods: ['GET', 'POST', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization'],
 }))
-app.use("*",requestLogger)
-app.use("*",errorHandler)
-app.use('*', errorMiddleware)
+// app.use("*",requestLogger)
+// app.use("*",errorHandler)
+// app.use('*', errorMiddleware)
+app.onError((err, c) => {
+  console.error('Unhandled error:', err)
+  return c.json(
+    {
+      error: 'Internal Server Error',
+    },
+    500
+  )
+})
 
 app.route('/api/chat', chatRoutes)
 app.route('/api/agents', agentRoutes)

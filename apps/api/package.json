@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js"
@@ -14,17 +14,21 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@hono/node-server": "^1.19.9",
     "@types/node": "^25.0.8",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.2.2",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17"
   },
   "dependencies": {
     "@agent/db": "*",
+    "@hono/node-server": "^1.19.9",
     "@ai-sdk/azure": "^3.0.11",
     "@ai-sdk/google": "^3.0.9",
     "@ai-sdk/openai": "^3.0.11",
     "@ai-sdk/xai": "^3.0.24",
-    "@hono/node-server": "^1.19.9",
     "ai": "^6.0.37",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",

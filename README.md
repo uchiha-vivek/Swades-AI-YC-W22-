@@ -1,5 +1,6 @@
 ## swades.ai Full Stack Engineering Assessment
 
+<img src='./assets/logo.png' height="600"  width="550"/>
 
 
 
@@ -206,3 +207,11 @@ NOTE : Right now some minor issues exist with the backend
 **Logging Screenshot**
 
 <img src='./assets/logging.png' height="800"  width="750"/>
+
+
+
+## System Design and Architecture
+
+High Level Design - What's happening under the hood ?
+
+<img src='./assets/high-level-design.png' height="800"  width="750"/>

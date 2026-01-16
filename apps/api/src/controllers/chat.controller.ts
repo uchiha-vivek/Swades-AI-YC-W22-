@@ -90,7 +90,7 @@ export class ChatController {
       }
     }
   } finally {
-    // persist ONLY if response exists
+     // persisting logic, redis can also be configured for in-memory testing
     if (fullResponse.trim().length > 0) {
       await prisma.message.create({
         data: {

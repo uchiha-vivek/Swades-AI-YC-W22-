@@ -214,4 +214,4 @@ NOTE : Right now some minor issues exist with the backend
 
 High Level Design - What's happening under the hood ?
 
-<img src='./assets/high-level-design.png' height="800"  width="750"/>
+<img src='./assets/high-level-design.png' height="1100"  width="850"/>

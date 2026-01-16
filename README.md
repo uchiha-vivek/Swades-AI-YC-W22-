@@ -1,7 +1,11 @@
 ## swades.ai Full Stack Engineering Assessment
 
-<img src='./assets/logo.png' height="600"  width="550"/>
 
+<p align="center">
+  <a href="https://www.swades.ai/">
+    <img src="./assets/logo.png" width="450" height="500" alt="swades-ai" style="margin: 0 15px;" />
+  </a>
+</p>
 
 
 ## Steps to run the project

@@ -1,3 +1,4 @@
+// this agent can be integrated accordingly with the either billing agent or order agent in future.
 import { prisma } from '@agent/db'
 
 export class ProfileAgent {

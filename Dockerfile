@@ -1,29 +1,43 @@
 FROM node:20-alpine
 
+# Needed for Prisma on Alpine
+RUN apk add --no-cache libc6-compat openssl
+
 WORKDIR /app
 
-# Copy backend + local db package
-COPY apps/api ./apps/api
-COPY packages/db ./packages/db
+# -----------------------------
+# 1. Copy root manifests FIRST (cache-friendly)
+# -----------------------------
+COPY package.json package-lock.json turbo.json .npmrc ./
 
 # -----------------------------
-# Install DB package deps & generate Prisma client
+# 2. Copy workspaces
 # -----------------------------
-WORKDIR /app/packages/db
-RUN npm install
-RUN npx prisma generate
+COPY apps ./apps
+COPY packages ./packages
 
 # -----------------------------
-# Install API deps & build
+# 3. Install ALL deps once (workspace-aware)
 # -----------------------------
-WORKDIR /app/apps/api
-RUN npm install
-RUN npm run build
+RUN npm ci
+
+# -----------------------------
+# 4. Generate Prisma client
+# -----------------------------
+RUN npx prisma generate --schema=packages/db/prisma/schema.prisma
+
+# -----------------------------
+# 5. Build API
+# -----------------------------
+RUN npm run build --workspace=apps/api
 
 # -----------------------------
 # Runtime
 # -----------------------------
+ENV NODE_ENV=production
 ENV PORT=8080
+
 EXPOSE 8080
 
+WORKDIR /app/apps/api
 CMD ["node", "dist/server.js"]

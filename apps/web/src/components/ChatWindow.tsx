@@ -25,11 +25,23 @@ export function ChatWindow() {
         <div className="flex flex-col h-screen bg-[#fafafa]">
             <div className="flex-1 overflow-y-auto px-6 py-10">
                 <div className="max-w-3xl mx-auto space-y-6">
-                    {messages.length === 0 && !thinking && (
-                        <div className="flex items-center justify-center min-h-[60vh] text-center text-sm text-gray-400">
-                            Start a conversation
-                        </div>
-                    )}
+                   {messages.length === 0 && !thinking && (
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <h1
+      className="
+        text-[72px]
+        font-semibold
+        text-gray-200
+        tracking-tight
+        select-none
+        drop-shadow-[0_4px_10px_rgba(0,0,0,0.12)]
+      "
+    >
+      swades.ai
+    </h1>
+  </div>
+)}
+
 
                     {messages.map((m, i) => (
                         <MessageBubble key={i} message={m} />

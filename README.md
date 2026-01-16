@@ -189,6 +189,10 @@ npm test
 
 Below are the test cases screenshot
 
+
+**Backend Test cases**
+
+
 <img src='./assets/test-cases.png' height="800"  width="750"/>
 
 
@@ -245,9 +249,16 @@ High Level Design - What's happening under the hood ?
 
 ## Future Enhancements
 
- 
+- Classifying intents based on the LLM but the problem is it over complicates the stuff and break the flow . 
+
+- Generating queries using LLM so that query can be made from **PRISMA** database and the response comes in natural flow . Currently the reponse is too much straight forward.
+
+-  The RAG based architecure for data which is **not-sensitive**
+
 
 
 
 
 ## Motivation for assignment
+
+- LangGraph multi agent system

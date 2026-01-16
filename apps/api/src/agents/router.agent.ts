@@ -25,7 +25,7 @@ function detectIntent(message: string) {
         return 'order'
     }
 
-    if (message.includes('email') || message.includes('username')) {
+    if (message.includes('email') || message.includes('username') || message.includes('emailId') || message.includes('user')  ) {
         return 'profile'
     }
 

@@ -193,6 +193,14 @@ Below are the test cases screenshot
 
 
 
+**Frontend Test cases**
+
+
+<img src='./assets/frontend-tests.png' height="800"  width="750"/>
+
+
+
+
 ## INFRA and DEPLOYMENT
 
 The **frontend** has been deployed in **Azure Static Web App**

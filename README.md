@@ -218,12 +218,20 @@ Below are the test cases screenshot
 **Backend Test cases**
 
 
+```bash
+npx vitest
+```
+
 <img src='./assets/test-cases.png' height="800"  width="750"/>
 
 
 
 **Frontend Test cases**
 
+
+```bash
+npx vitest
+```
 
 <img src='./assets/frontend-tests.png' height="800"  width="750"/>
 

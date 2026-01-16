@@ -14,7 +14,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    
     "@types/node": "^25.0.8",
     "@types/supertest": "^6.0.3",
     "supertest": "^7.2.2",
@@ -23,11 +22,12 @@
     "vitest": "^4.0.17"
   },
   "dependencies": {
-    "@agent/db": "*",
+    "@agent/db": "file:../../packages/db",
     "@ai-sdk/azure": "^3.0.11",
     "@ai-sdk/google": "^3.0.9",
     "@ai-sdk/openai": "^3.0.11",
     "@ai-sdk/xai": "^3.0.24",
+    "@hono/node-server": "^1.19.9",
     "ai": "^6.0.37",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",

@@ -185,3 +185,24 @@ npm test
 Below are the test cases screenshot
 
 <img src='./assets/test-cases.png' height="800"  width="750"/>
+
+
+
+## INFRA and DEPLOYMENT
+
+The **frontend** has been deployed in **Azure Static Web App**
+
+[Frontend Deployed Link](https://white-sea-0e161590f.4.azurestaticapps.net/)
+
+
+The **backend** has been deployed on **Azure App Service**
+
+NOTE : Right now some minor issues exist with the backend
+
+
+
+### Logging
+
+**Logging Screenshot**
+
+<img src='./assets/logging.png' height="800"  width="750"/>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send } from 'lucide-react'
 
+
 export function ChatInput({ onSend }: { onSend: (msg: string) => void }) {
   const [text, setText] = useState('')
 
@@ -14,29 +15,27 @@ export function ChatInput({ onSend }: { onSend: (msg: string) => void }) {
 
   return (
     <motion.form
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       onSubmit={handleSubmit}
       className="relative"
     >
-      <div className="flex items-end gap-3 bg-card border border-border rounded-2xl p-2 shadow-sm">
+      <div className="flex items-end gap-2 border rounded-2xl bg-white px-3 py-2 shadow-sm">
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={1}
           placeholder="Ask something..."
-          className="flex-1 resize-none bg-transparent px-4 py-3 text-sm focus:outline-none"
+          className="flex-1 resize-none bg-transparent px-2 py-2 text-sm focus:outline-none"
         />
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <button
           type="submit"
           disabled={!text.trim()}
-          className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center disabled:opacity-50"
+          className="w-9 h-9 rounded-xl bg-black text-white flex items-center justify-center disabled:opacity-40"
         >
-          <Send size={18} />
-        </motion.button>
+          <Send size={16} />
+        </button>
       </div>
     </motion.form>
   )

@@ -121,6 +121,7 @@ export class ChatService {
 
     
     const context = await getCompactedContext(convoId)
+    console.log('Context',context)
 
     const llmStream = await streamText({
       model: azure('gpt-4o-mini'),

@@ -49,7 +49,7 @@ model Invoice {
   userId    String
   user      User     @relation(fields: [userId], references: [id])
   amount    Float
-  status    String
+  status    InvoiceStatus
   createdAt DateTime @default(now())
 }
 
@@ -57,3 +57,10 @@ enum MessageRole {
   user
   agent
 }
+
+enum InvoiceStatus {
+  paid
+  pending
+  overdue
+}
+

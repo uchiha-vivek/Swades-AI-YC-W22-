@@ -11,7 +11,7 @@ app.use('*', cors({
   allowMethods: ['GET', 'POST', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization'],
 }))
-// app.use("*",requestLogger)
+app.use("*",requestLogger)
 // app.use("*",errorHandler)
 // app.use('*', errorMiddleware)
 app.onError((err, c) => {

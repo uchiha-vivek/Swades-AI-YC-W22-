@@ -1,3 +1,6 @@
+// use of this code 
+// It prevents token overflow, slow responses,  prevents memory burstout
+
 import { prisma } from '@agent/db'
 import { generateText } from 'ai'
 import { azure } from '../ai/ollama'
@@ -18,6 +21,7 @@ export async function getCompactedContext(conversationId: string) {
   if (!conversation) return []
 
   const messages = conversation.messages
+  console.log('Mesages',messages)
 
    
   if (messages.length <= MAX_MESSAGES) {

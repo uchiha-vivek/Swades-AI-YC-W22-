@@ -227,3 +227,27 @@ NOTE : Right now some minor issues exist with the backend
 High Level Design - What's happening under the hood ?
 
 <img src='./assets/high-level-design.png' height="1100"  width="850"/>
+
+
+## Bonuses Included
+
+
+- Set up of monorepo with **HONO RPC**
+- Rate Limiting implementation [LINK](https://github.com/uchiha-vivek/Swades-AI-YC-W22-/blob/main/apps/api/src/middlewares/rateLimit.ts)
+- Test cases included **Screenshots** and **commands** present
+- Compaction included [LINK](http://github.com/uchiha-vivek/Swades-AI-YC-W22-/blob/main/apps/api/src/utils/contextManger.ts)
+
+- INcluded **Thinking** in the UI
+- Deployed Live Demo [Frontend](https://white-sea-0e161590f.4.azurestaticapps.net/)
+  NOTE : Backend was having some issues so testing locally is preferred. Backend fix will be soon done
+
+
+
+## Future Enhancements
+
+ 
+
+
+
+
+## Motivation for assignment

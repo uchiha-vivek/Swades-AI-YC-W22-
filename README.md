@@ -70,6 +70,14 @@ npm run dev
 
 ## API Usage and testing
 
+
+**NOTE** - Here we are using `const TEST_USER_ID = '55968d8b-a43a-48e6-bb0e-bd61ff16eb59'` as userid for now. 
+This has been done to make sure that a single user in inside his own environment, (assume like he has done authentication and authorized inside his workspace since we not doing any authentication from frontend)
+
+
+**AI Model** - For local testing Ollama models can also be used
+
+
 `AGENT ROUTES`
 
 **Getting all the available agents**

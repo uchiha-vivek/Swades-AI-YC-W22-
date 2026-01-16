@@ -222,6 +222,13 @@ Below are the test cases screenshot
 
 
 
+### Prisma Studio
+
+Date model
+
+<img src='./assets/prisma-studio.png' height="800"  width="750"/>
+
+
 ## INFRA and DEPLOYMENT
 
 The **frontend** has been deployed in **Azure Static Web App**

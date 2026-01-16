@@ -29,9 +29,22 @@ Navigate to apps where the ui and backend is present
 cd apps
 ```
 
-Here `api` is the backend folder and `web` is the frontend folder
+Navigate to `api` folder
 
-Navigate inside both the folders and run `npm install`
+```bash
+cd api
+npm i
+```
+
+Navigate to `web` folder
+
+```bash
+cd web
+npm i
+```
+
+**NOTE** -  Here `api` is the backend folder and `web` is the frontend folder
+  
 
 
 Inside packages folder all the `Database` logic is used
@@ -46,7 +59,11 @@ cd packages
 npx prisma studio
 ```
 
+Also from the root you can run if you have install the dependencies
 
+```bash
+npm run dev
+```
 
 
 
@@ -247,7 +264,7 @@ High Level Design - What's happening under the hood ?
 
 
 
-## Future Enhancements
+## Ongoing & Future Enhancements
 
 - Classifying intents based on the LLM but the problem is it over complicates the stuff and break the flow . 
 
@@ -262,3 +279,8 @@ High Level Design - What's happening under the hood ?
 ## Motivation for assignment
 
 - LangGraph multi agent system
+
+
+**LOOM VIDEO**
+
+[Loom Video](https://www.loom.com/share/e9de840383d24084ad9c1dcc8e65bb21)

@@ -24,7 +24,6 @@ jobs:
           node-version: '20.x'
 
       - name: Install backend dependencies
-        working-directory: apps/api
         run: npm install
 
       - name: Build backend
@@ -32,13 +31,9 @@ jobs:
         run: npm run build
 
       - name: Prepare production dependencies
-        working-directory: apps/api
-        run: |
-          rm -rf node_modules
-          npm install --omit=dev
+        run: npm install --omit=dev
 
-      # ✅ IMPORTANT: upload BOTH api + packages/db together
-      # while preserving relative paths
+      
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:

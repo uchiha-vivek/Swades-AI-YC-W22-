@@ -1,12 +1,14 @@
-import 'dotenv/config'
+if (process.env.NODE_ENV !== 'production') {
+  await import('dotenv/config')
+}
 import { serve } from '@hono/node-server'
 import { app } from "./app.js"
 
-
+const port = Number(process.env.PORT) || 3001
 
 serve({
   fetch: app.fetch,
-  port: 3001,
+  port,
 })
 
-console.log('API running on http://localhost:3001')
+console.log(`API running on ${port}`)

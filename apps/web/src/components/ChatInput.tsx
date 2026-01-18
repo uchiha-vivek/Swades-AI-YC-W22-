@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send } from 'lucide-react'
 
-
 export function ChatInput({ onSend }: { onSend: (msg: string) => void }) {
   const [text, setText] = useState('')
 
@@ -11,6 +10,16 @@ export function ChatInput({ onSend }: { onSend: (msg: string) => void }) {
     if (!text.trim()) return
     onSend(text)
     setText('')
+  }
+
+  function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+    // Enter → send
+    if (e.key === 'Enter' && !e.ctrlKey && !e.shiftKey) {
+      e.preventDefault()
+      handleSubmit()
+    }
+
+    // Ctrl+Enter or Shift+Enter → new line (default behavior)
   }
 
   return (
@@ -24,6 +33,7 @@ export function ChatInput({ onSend }: { onSend: (msg: string) => void }) {
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
+          onKeyDown={handleKeyDown}
           rows={1}
           placeholder="Ask something..."
           className="flex-1 resize-none bg-transparent px-2 py-2 text-sm focus:outline-none"

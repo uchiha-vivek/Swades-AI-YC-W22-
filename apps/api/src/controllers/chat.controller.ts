@@ -67,7 +67,7 @@ export class ChatController {
   let fullResponse = ''
 
   try {
-    await writer.write('[typing]\n')
+    await writer.write('\n')
 
     if (isStreamTextResult(resultStream)) {
       for await (const chunk of resultStream.textStream) {

@@ -308,3 +308,21 @@ High Level Design - What's happening under the hood ?
 **LOOM VIDEO**
 
 [Loom Video](https://www.loom.com/share/e9de840383d24084ad9c1dcc8e65bb21)
+
+
+**POST ASSIGNMENT SUBMISSION**
+
+This loom video contains the enhancements
+
+- the response coming from the database is natural
+
+[LOOM Video Enhancement](https://www.loom.com/share/98d01eebb326422a967a5c0c6146e259)
+
+
+What fixes has been done ?
+
+- backend has been deployed
+- the data model is migrated to **supabase** due to `ipv4` issues
+-  getting natural response from the database
+- routing of agents done on basis of LLM
+- abstraction layer added on top of queries

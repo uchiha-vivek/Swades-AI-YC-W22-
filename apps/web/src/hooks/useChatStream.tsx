@@ -17,6 +17,7 @@ export function useChatStream() {
     setThinking(true)
 
     const res = await fetch(
+      // 'https://swades-ai-backend-epeagaaubxhsepgq.eastus2-01.azurewebsites.net/api/chat/messages/stream',
       'http://localhost:3001/api/chat/messages/stream',
       {
         method: 'POST',

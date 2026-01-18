@@ -4,6 +4,7 @@ import { formatSupportResponse } from '../utils/support.formatter.js'
 type Input = {
   conversationId?: string
 }
+type LLMRole = 'user' | 'assistant'
 
 export class SupportAgent {
   static async handle({ conversationId }: Input) {
@@ -17,11 +18,17 @@ export class SupportAgent {
       return 'Hello! How can I help you today?'
     }
 
-    const normalizedMessages = history.map(m => ({
-      role: m.role,
+    const normalizedMessages: {
+      role: LLMRole
+      content: string
+      createdAt: string
+    }[] = history.map(m => ({
+      role: m.role === 'agent' ? 'assistant' : 'user',
       content: m.content,
       createdAt: m.createdAt.toISOString(),
     }))
+
+
 
 
     // console.log('Normalized messageds',normalizedMessages)

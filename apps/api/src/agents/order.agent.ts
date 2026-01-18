@@ -1,4 +1,5 @@
 import { getOrdersByUser } from '../tools/order.tools.js'
+import {formatOrdersResponse} from '../utils/order.formatter.js'
 
 type Input = {
   userId: string
@@ -12,13 +13,12 @@ export class OrderAgent {
       return 'You do not have any orders yet.'
     }
 
-    return orders
-      .map(
-        (o:any) =>
-          `Order ${o.id} is ${o.status}${
-            o.trackingId ? ` (Tracking ID: ${o.trackingId})` : ''
-          }`
-      )
-      .join('\n')
+   // making typescript fix for normalization   
+   const normalizedOrders = orders.map(order => ({
+      ...order,
+      createdAt: order.createdAt.toISOString(),
+    }))
+
+    return formatOrdersResponse(normalizedOrders)
   }
 }

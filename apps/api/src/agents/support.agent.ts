@@ -1,4 +1,4 @@
-import { getConversationHistory } from '../tools/conversation.tools'
+import { getConversationHistory } from '../tools/conversation.tools.js'
 
 export class SupportAgent {
   static async handle({ conversationId }: any) {

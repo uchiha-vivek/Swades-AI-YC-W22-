@@ -1,4 +1,4 @@
-import { getOrdersByUser } from '../tools/order.tools'
+import { getOrdersByUser } from '../tools/order.tools.js'
 
 type Input = {
   userId: string

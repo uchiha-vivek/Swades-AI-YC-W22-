@@ -2,9 +2,12 @@
   "name": "@agent/db",
   "version": "1.0.0",
   "private": true,
-  "main": "index.ts",
-  "types": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
+  "scripts": {
+    "build":"tsc"
+  },
   "dependencies": {
     "@prisma/client": "5.22.0"
   },

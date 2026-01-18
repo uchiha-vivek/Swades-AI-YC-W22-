@@ -3,7 +3,7 @@
 
 import { prisma } from '@agent/db'
 import { generateText } from 'ai'
-import { azure } from '../ai/ollama'
+import { azure } from '../ai/ollama.js'
 import { openai } from '@ai-sdk/openai'
 
 const MAX_MESSAGES = 10

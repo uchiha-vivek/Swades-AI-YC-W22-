@@ -1,8 +1,8 @@
-import { OrderAgent } from './order.agent'
-import { BillingAgent } from './billing.agent'
-import { SupportAgent } from './support.agent'
-import { logger } from '../lib/logger'
-import { ProfileAgent } from './profile.agent'
+import { OrderAgent } from './order.agent.js'
+import { BillingAgent } from './billing.agent.js'
+// import { SupportAgent } from './support.agent'
+import { logger } from '../lib/logger.js'
+import { ProfileAgent } from './profile.agent.js'
 
 type AgentInput = {
     userId: string

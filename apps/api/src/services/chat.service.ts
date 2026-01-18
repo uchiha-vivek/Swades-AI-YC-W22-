@@ -1,7 +1,7 @@
 import { prisma } from '@agent/db'
 import { RouterAgent } from '../agents/router.agent.js'
 import { streamText } from 'ai'
-import { azure} from '../ai/ollama'
+import { azure} from '../ai/ollama.js'
 import { getCompactedContext } from '../utils/contextManger.js'
 import { openai } from '@ai-sdk/openai'
 

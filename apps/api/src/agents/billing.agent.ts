@@ -1,5 +1,5 @@
-import { getInvoicesByUser } from '../tools/billing.tools'
-import type { Invoice } from '../types/invoice'
+import { getInvoicesByUser } from '../tools/billing.tools.js'
+import type { Invoice } from '../types/invoice.js'
 
 export class BillingAgent {
   static async handle({ userId }: { userId: string }) {
